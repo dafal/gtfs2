@@ -809,6 +809,7 @@ def check_datasource_index(schedule, gtfs_dir, file):
                 conn.execute(text(sql_fix_route_agency), {"q": "q"})
                 conn.commit()
 
+    schedule.session.close()
     schedule.engine.dispose()
 
     
